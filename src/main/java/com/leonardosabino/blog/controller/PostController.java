@@ -27,31 +27,31 @@ public class PostController {
 
     @GetMapping
     @ApiOperation(value = "Find all posts")
-    public List<PostDTO> findpost() {
-        return postService.findpost();
+    public List<PostDTO> findPost() {
+        return postService.findPost();
     }
 
     @GetMapping("{id}")
     @ApiOperation(value = "Find post by ID")
-    public PostDTO findpostById(@PathVariable String id) {
-        return postService.findpostById(id);
+    public PostDTO findPostById(@PathVariable String id) {
+        return postService.findPostById(id);
     }
 
     @PostMapping
     @ApiOperation(value = "Create a new post")
-    public PostDTO savepost(@Validated @RequestBody PostDTO postEntity) {
-        return postService.savepost(postEntity);
+    public PostDTO savePost(@Validated @RequestBody PostDTO postDTO) {
+        return postService.savePost(postDTO);
     }
 
     @DeleteMapping("{id}")
     @ApiOperation(value = "Delete a existent post")
-    public void deletepost(@PathVariable String id) {
-        postService.deletepost(id);
+    public void deletePost(@PathVariable String id) {
+        postService.deletePost(id);
     }
 
     @DeleteMapping
     @ApiOperation(value = "Delete all existent posts")
-    public void deletepost() {
-        postService.deletepost();
+    public void deletePost() {
+        postService.deletePost();
     }
 }
